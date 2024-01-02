@@ -1,1 +1,1 @@
-daily_word.txt
+Deml
