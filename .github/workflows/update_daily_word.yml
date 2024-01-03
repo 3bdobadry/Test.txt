@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.Badry }}  # Use the secret here
+          token: ${{ secrets.GH_TOKEN }}  # Use the secret here
 
       - name: Update daily word
         run: |
