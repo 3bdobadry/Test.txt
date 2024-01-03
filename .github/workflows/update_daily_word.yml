@@ -16,9 +16,9 @@ jobs:
 
       - name: Update daily word
         run: |
-          echo $(date +"%Y-%m-%d") > daily_word.txt
+          echo $(date +"%Y-%m-%d") > .github/workflows/daily_word.txt
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
-          git add daily_word.txt
+          git add .github/workflows/daily_word.txt
           git commit -m "Update daily word"
           git push
