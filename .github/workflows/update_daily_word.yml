@@ -1,8 +1,9 @@
 name: Update Daily Word
 
 on:
-  schedule:
-    - cron: '0 22 * * *'  # Run every day at 10 PM UTC
+  push:
+    branches:
+      - main
 
 jobs:
   update-word:
@@ -11,11 +12,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GH_TOKEN }}  # Use the secret here
-
-      - name: Pull latest changes
-        run: git pull origin main
 
       - name: Update daily word
         run: |
@@ -24,4 +20,4 @@ jobs:
           git config user.name "GitHub Actions"
           git add daily_word.txt
           git commit -m "Update daily word"
-          git push
+          git push origin main
