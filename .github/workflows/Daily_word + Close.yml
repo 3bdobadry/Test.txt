@@ -16,7 +16,7 @@ jobs:
     - name: Send Discord Messages
       run: |
         curl -X POST -H "Content-Type: application/json" -d '{"content":"Abdo close"}' https://discord.com/api/webhooks/1193297851799842817/LPyk8CsRvrbjkrFVor2feIadZvGDDJWW-1mqkejqvBtPRxxEIKq_Btcn4ynv4H5Jjwms
-        curl -X POST -H "Content-Type: application/json" -d '{"content":"PCs close"}' https://discord.com/api/webhooks/1193297851799842817/LPyk8CsRvrbjkrFVor2feIadZvGDDJWW-1mqkejqvBtPRxxEIKq_Btcn4ynv4H5Jjwms
+        curl -X POST -H "Content-Type: application/json" -d '{"content":"PC close"}' https://discord.com/api/webhooks/1193297851799842817/LPyk8CsRvrbjkrFVor2feIadZvGDDJWW-1mqkejqvBtPRxxEIKq_Btcn4ynv4H5Jjwms
         curl -X POST -H "Content-Type: application/json" -d '{"content":"KimoStore close"}' https://discord.com/api/webhooks/1193297851799842817/LPyk8CsRvrbjkrFVor2feIadZvGDDJWW-1mqkejqvBtPRxxEIKq_Btcn4ynv4H5Jjwms
         curl -X POST -H "Content-Type: application/json" -d '{"content":"Pc close"}' https://discord.com/api/webhooks/1193297851799842817/LPyk8CsRvrbjkrFVor2feIadZvGDDJWW-1mqkejqvBtPRxxEIKq_Btcn4ynv4H5Jjwms
         curl -X POST -H "Content-Type: application/json" -d '{"content":"Trex close"}' https://discord.com/api/webhooks/1193297851799842817/LPyk8CsRvrbjkrFVor2feIadZvGDDJWW-1mqkejqvBtPRxxEIKq_Btcn4ynv4H5Jjwms
