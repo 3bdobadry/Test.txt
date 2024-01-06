@@ -1,4 +1,4 @@
-name: Discord Notification
+name: Discord Notification and Update Daily Word
 
 on:
   schedule:
@@ -16,8 +16,24 @@ jobs:
     - name: Send Discord Messages
       run: |
         curl -X POST -H "Content-Type: application/json" -d '{"content":"Abdo close"}' https://discord.com/api/webhooks/1193297851799842817/LPyk8CsRvrbjkrFVor2feIadZvGDDJWW-1mqkejqvBtPRxxEIKq_Btcn4ynv4H5Jjwms
-        curl -X POST -H "Content-Type: application/json" -d '{"content":"PC close"}' https://discord.com/api/webhooks/1193297851799842817/LPyk8CsRvrbjkrFVor2feIadZvGDDJWW-1mqkejqvBtPRxxEIKq_Btcn4ynv4H5Jjwms
+        curl -X POST -H "Content-Type: application/json" -d '{"content":"PCs close"}' https://discord.com/api/webhooks/1193297851799842817/LPyk8CsRvrbjkrFVor2feIadZvGDDJWW-1mqkejqvBtPRxxEIKq_Btcn4ynv4H5Jjwms
         curl -X POST -H "Content-Type: application/json" -d '{"content":"KimoStore close"}' https://discord.com/api/webhooks/1193297851799842817/LPyk8CsRvrbjkrFVor2feIadZvGDDJWW-1mqkejqvBtPRxxEIKq_Btcn4ynv4H5Jjwms
         curl -X POST -H "Content-Type: application/json" -d '{"content":"Pc close"}' https://discord.com/api/webhooks/1193297851799842817/LPyk8CsRvrbjkrFVor2feIadZvGDDJWW-1mqkejqvBtPRxxEIKq_Btcn4ynv4H5Jjwms
         curl -X POST -H "Content-Type: application/json" -d '{"content":"Trex close"}' https://discord.com/api/webhooks/1193297851799842817/LPyk8CsRvrbjkrFVor2feIadZvGDDJWW-1mqkejqvBtPRxxEIKq_Btcn4ynv4H5Jjwms
         curl -X POST -H "Content-Type: application/json" -d '{"content":"Kemoz close"}' https://discord.com/api/webhooks/1193297851799842817/LPyk8CsRvrbjkrFVor2feIadZvGDDJWW-1mqkejqvBtPRxxEIKq_Btcn4ynv4H5Jjwms
+
+  update-word:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Update daily word
+        run: |
+          echo $(date +"%Y-%m-%d") > daily_word.txt
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+          git add daily_word.txt
+          git commit -m "Update daily word"
+          git push origin main
